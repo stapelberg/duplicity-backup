@@ -1,0 +1,18 @@
+# File permissions for this file should be 640 (rw--r-----) because it
+# contains sensible information (passwords).
+
+# Fail as soon as a statement returns a non-zero value.
+set -e
+
+# Password for the vollmar backup FTP. Passed via environment instead of
+# parameter for security reasons.
+export FTP_PASSWORD=asdf
+
+# Password for the backup volumens themselve. This protects us from somebody
+# reading our data on the backup server. It does *NOT* protect us from somebody
+# reading the data on the backup server when he has already broken into this
+# server. Then again, he has access to all the data anyways in that case :).
+export PASSPHRASE=uiae
+
+# FTP path in which all backups are stored.
+BASEPATH=ftp://user@foo.backup.vollmar.net/duplicity/
