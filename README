@@ -1,7 +1,18 @@
+Duplicity backup
+────────────────
+
 This script serves as an example for what you could use. It uses duplicity in a
 reasonable way to create incremental backups to the FTP server of my hoster (1
 full backup every 7 days, backups are kept for a month). In the second part of
 backup.sh, it uses xen-lvm-snapshot, a script which automatically makes and
 mounts snapshots of virtual machine disks.
 
-Configuration is done in common.sh.
+Configuration is done in common.sh (copy common.sh.example).
+
+It is safe to run this script from cron, like this:
+
+# crontab -l
+# m h  dom mon dow   command
+7 4 * * * /root/bin/backup/backup.sh
+
+-- Michael Stapelberg, 2011-11-06
