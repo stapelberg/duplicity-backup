@@ -9,7 +9,11 @@
 # Full backup of this host (VM host)
 ################################################################################
 
+echo ""
+echo "************************************************************"
 echo "Backing up host"
+echo "************************************************************"
+echo ""
 
 # Run an incremental backup of / daily, run a full backup every week. Only use
 # files on the file system /, so /proc, /sys and other dynamic stuff is
@@ -49,7 +53,11 @@ for LV in ${LVS}
 do
 	# Reduce the name from vg/domu-<name> to <name>
 	DOMU=$(echo "$LV" | sed 's,[^/]*/domu-,,g')
+	echo ""
+	echo "************************************************************"
 	echo "Backing up VM $DOMU"
+	echo "************************************************************"
+	echo ""
 
 	# Run an incremental backup of / daily, run a full backup every week. Only use
 	# files on the file system /, so /proc, /sys and other dynamic stuff is
