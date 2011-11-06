@@ -70,3 +70,6 @@ do
 	# Log status.
 	/usr/bin/duplicity collection-status "$BASEPATH/vm-$DOMU"
 done
+
+echo "-- "
+echo "backup.sh git ver $(git describe --always) ($(git log --pretty=format:%cd --date=short -n1))"
