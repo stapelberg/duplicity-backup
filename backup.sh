@@ -29,7 +29,7 @@ echo ""
 
 # Remove all but the last 4 full backups. This keeps a bit over one month of
 # history (since we force a full backup every 7 days).
-/usr/bin/duplicity remove-all-but-n-full 4 "$BASEPATH/in-root"
+/usr/bin/duplicity remove-all-but-n-full 4 --force "$BASEPATH/in-root"
 
 # Log status.
 /usr/bin/duplicity collection-status "$BASEPATH/in-root"
@@ -73,7 +73,7 @@ do
 
 	# Remove all but the last 4 full backups. This keeps a bit over one month of
 	# history (since we force a full backup every 7 days).
-	/usr/bin/duplicity remove-all-but-n-full 4 "$BASEPATH/vm-$DOMU"
+	/usr/bin/duplicity remove-all-but-n-full 4 --force "$BASEPATH/vm-$DOMU"
 
 	# Log status.
 	/usr/bin/duplicity collection-status "$BASEPATH/vm-$DOMU"
