@@ -79,5 +79,6 @@ do
 	/usr/bin/duplicity collection-status "$BASEPATH/vm-$DOMU"
 done
 
+cd $(dirname $0)
 echo "-- "
 echo "backup.sh git ver $(git describe --always) ($(git log --pretty=format:%cd --date=short -n1))"
