@@ -9,6 +9,10 @@
 # Full backup of this host (VM host)
 ################################################################################
 
+echo "From: $(hostname) <root@$(hostname -f)>"
+echo "Subject: Backup $(date +'%Y-%m-%d')"
+
+echo ""
 echo ""
 echo "************************************************************"
 echo "Backing up host"
